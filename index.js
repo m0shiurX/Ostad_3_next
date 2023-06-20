@@ -46,3 +46,15 @@ function isPrime(number) {
 const number = 17;
 const result = isPrime(number);
 console.log(result); // Output: true
+
+// 4. a.
+function openWindow(url, width, height) {
+	const windowFeatures = `width=${width},height=${height}`;
+	window.open(url, '_blank', windowFeatures);
+}
+
+// 4. b.
+const url = 'https://example.com';
+const width = 800;
+const height = 600;
+openWindow(url, width, height);
