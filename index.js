@@ -23,3 +23,26 @@ function squareRootOfSumOfNumbersArray(numbers) {
 const numbers = [3, 8, 3, 4, 5];
 const sqroot = squareRootOfSumOfNumbersArray(numbers);
 console.log('\n The square root of given numbers is ', sqroot);
+
+// 3. a.
+function isPrime(number) {
+	// 1 and numbers less than 1 are not prime
+	if (number <= 1) {
+		return false;
+	}
+
+	// Check for divisibility from 2 to the square root of the number
+	for (let i = 2; i <= Math.sqrt(number); i++) {
+		if (number % i === 0) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+// 3. b.
+
+const number = 17;
+const result = isPrime(number);
+console.log(result); // Output: true
