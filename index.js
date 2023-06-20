@@ -92,3 +92,28 @@ getUserLocation()
 	.catch((error) => {
 		console.error('Error:', error.message);
 	});
+
+// 7-13 questions are on html   files
+
+// 14.
+function sendGetRequest() {
+	const url = 'https://api.example.com/data';
+
+	fetch(url)
+		.then((response) => {
+			if (response.ok) {
+				// Request was successful
+				return response.json();
+			} else {
+				// Request was not successful
+				throw new Error('Request failed with status ' + response.status);
+			}
+		})
+		.then((responseData) => {
+			// Handle the response data here
+			console.log(responseData);
+		})
+		.catch((error) => {
+			console.error('Request failed:', error);
+		});
+}
