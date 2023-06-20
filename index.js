@@ -61,7 +61,20 @@ openWindow(url, width, height);
 
 // 5. a.
 
-// 5. b.
+function getBrowserInfo() {
+	const browserName = navigator.appCodeName;
+	const browserVersion = navigator.appVersion;
+
+	return {
+		name: browserName,
+		version: browserVersion,
+	};
+}
+
+// 5. b
+const browserInfo = getBrowserInfo();
+console.log(`Browser Name: ${browserInfo.name}`);
+console.log(`Browser Version: ${browserInfo.version}`);
 
 // 6. a.
 function getUserLocation() {
