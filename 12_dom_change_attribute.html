@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Change Image Source Example</title>
+</head>
+
+<body>
+  <h1>Change Image Source Example</h1>
+  <img id="myImage" src="assets/image1.jpg" alt="Initial Image">
+  <br>
+  <button id="myButton">Change Image</button>
+
+  <script>
+    // Function to change the source URL of the image
+    function changeImageSource() {
+      const image = document.getElementById('myImage');
+      image.src = 'assets/image2.jpg';
+      image.alt = 'New Image';
+    }
+
+    // Attach event listener to the button
+    document.getElementById('myButton').addEventListener('click', changeImageSource);
+  </script>
+</body>
+
+</html>
