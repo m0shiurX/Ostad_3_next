@@ -117,3 +117,36 @@ function sendGetRequest() {
 			console.error('Request failed:', error);
 		});
 }
+
+//15.
+function sendPostRequest() {
+	const url = 'https://api.example.com/submit';
+	const data = {
+		name: 'John Doe',
+		email: 'johndoe@example.com',
+	};
+
+	fetch(url, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(data),
+	})
+		.then((response) => {
+			if (response.ok) {
+				// Request was successful
+				return response.json();
+			} else {
+				// Request was not successful
+				throw new Error('Request failed with status ' + response.status);
+			}
+		})
+		.then((responseData) => {
+			// Handle the response data here
+			console.log(responseData);
+		})
+		.catch((error) => {
+			console.error('Request failed:', error);
+		});
+}
