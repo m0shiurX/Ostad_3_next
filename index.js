@@ -58,3 +58,37 @@ const url = 'https://example.com';
 const width = 800;
 const height = 600;
 openWindow(url, width, height);
+
+// 5. a.
+
+// 5. b.
+
+// 6. a.
+function getUserLocation() {
+	return new Promise((resolve, reject) => {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(
+				(position) => {
+					const latitude = position.coords.latitude;
+					const longitude = position.coords.longitude;
+					resolve({ latitude, longitude });
+				},
+				(error) => {
+					reject(error);
+				}
+			);
+		} else {
+			reject(new Error('Geolocation is not supported by this browser.'));
+		}
+	});
+}
+
+// 6. b.
+getUserLocation()
+	.then((location) => {
+		console.log('Latitude:', location.latitude);
+		console.log('Longitude:', location.longitude);
+	})
+	.catch((error) => {
+		console.error('Error:', error.message);
+	});
