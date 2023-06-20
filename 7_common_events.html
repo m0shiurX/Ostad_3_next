@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Interactive Webpage</title>
+  <style>
+    img {
+      width: 200px;
+      height: 200px;
+      transition: transform 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Interactive Webpage</h1>
+  <img id="myImage" src="assets/image1.jpg" alt="Image" />
+
+  <script>
+    // Function to display alert with click coordinates
+    function handleClick(event) {
+      const x = event.clientX;
+      const y = event.clientY;
+      alert(`Click coordinates: (${x}, ${y})`);
+    }
+
+    // Function to display alert with key code
+    function handleKeyPress(event) {
+      const keyCode = event.keyCode || event.which;
+      alert(`Key code: ${keyCode}`);
+    }
+
+    // Function to change image source on mouseover
+    function changeImageSource() {
+      const img = document.getElementById('myImage');
+      img.src = 'image2.jpg';
+    }
+
+    // Attach event listeners
+    document.addEventListener('click', handleClick);
+    document.addEventListener('keypress', handleKeyPress);
+    document.getElementById('myImage').addEventListener('mouseover', changeImageSource);
+  </script>
+</body>
+
+</html>
